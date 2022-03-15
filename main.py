@@ -33,13 +33,11 @@ def find_birthday_students(cal: Calendar) -> List[str]:
 def run(event, context):
     cal = get_calendar()
     students = find_birthday_students(cal)
+    print(students)
     if not students:
         return
 
-    if students:
-        text = f':tada:今日は {" と ".join(students)} の誕生日です:tada:'
-    else:
-        text = '今日が誕生日の生徒はいません'
+    text = f':tada:今日は {" と ".join(students)} の誕生日です:tada:'
 
     body = {
         'text': text,
